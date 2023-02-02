@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import * as petService from "../../services/petService";
+import { useNavigate } from 'react-router-dom';
+// import * as petService from '../../services/petService';
 
 const Create = () => {
     const navigate = useNavigate();
@@ -8,22 +8,22 @@ const Create = () => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
 
-		let name = formData.get("name");
-		let description = formData.get("description");
-		let imageUrl = formData.get("imageUrl");
-		let type = formData.get("type");
+		let name = formData.get('name');
+		let description = formData.get('description');
+		let imageUrl = formData.get('imageUrl');
+		let type = formData.get('type');
 
-		petService.create({ 
-            name, 
-            description, 
-            imageUrl, 
-            type })
-            .then(result => {
-                navigate('/dashboard');
-            })
-            .catch(err => {
-                console.log(err);
-            });
+		// petService.create({ 
+        //     name, 
+        //     description, 
+        //     imageUrl, 
+        //     type }, user.accessToken)
+        //     .then(result => {
+        //         navigate('/dashboard');
+        //     })
+        //     .catch(err => {
+        //         console.log(err);
+        //     });
 	};
 
 	return (
